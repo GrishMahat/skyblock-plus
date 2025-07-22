@@ -834,21 +834,25 @@ public class LeaderboardDatabase {
 
 	public void initializeJacob() {
 		try {
-			JacobData jacobData = gson.fromJson(selectFromJsonStorage(JsonStorageId.JACOB), JacobData.class);
-			if (jacobData.getYear() == getSkyblockYear()) {
-				JacobHandler.setJacobData(jacobData);
+			String jsonData = selectFromJsonStorage(JsonStorageId.JACOB);
+			if (jsonData != null) {
+				JacobData jacobData = gson.fromJson(jsonData, JacobData.class);
+				if (jacobData != null && jacobData.getYear() == getSkyblockYear()) {
+					JacobHandler.setJacobData(jacobData);
+					log.info("Successfully loaded Jacob data from storage");
+					return;
+				}
 			}
 		} catch (Exception e) {
-			log.error("", e);
+			log.error("Failed to load Jacob data from storage", e);
 		}
 
-		if (JacobHandler.getJacobData() == null) {
-			try {
-				JacobHandler.setJacobDataFromApi();
-				log.info("Fetched jacob data from API");
-			} catch (Exception e) {
-				log.error("", e);
-			}
+		// If we get here, either the data was null, invalid, or for wrong year
+		try {
+			JacobHandler.setJacobDataFromApi();
+			log.info("Fetched jacob data from API");
+		} catch (Exception e) {
+			log.error("Failed to fetch Jacob data from API", e);
 		}
 	}
 
@@ -898,10 +902,17 @@ public class LeaderboardDatabase {
 			statement.setInt(1, id.id);
 
 			try (ResultSet response = statement.executeQuery()) {
-				response.next();
-				String json = response.getString("data");
-				log.info("Retrieved " + id.name());
-				return json;
+				if (response.next()) {
+					String json = response.getString("data");
+					log.info("Retrieved " + id.name());
+					return json;
+				} else {
+					// Only log a warning for non-JACOB entries since JACOB data is expected to be missing on first run
+					if (id != JsonStorageId.JACOB) {
+						log.warn("No data found for " + id.name());
+					}
+					return null;
+				}
 			}
 		}
 	}

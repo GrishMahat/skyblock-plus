@@ -17,13 +17,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class UpdateSlashCommands extends Command {
 
-	private final JDA jda;
-
-	public UpdateSlashCommands(JDA jda) {
+	public UpdateSlashCommands() {
 		this.name = "d-slash";
 		this.ownerCommand = true;
 		this.botPermissions = defaultPerms();
-		this.jda = jda;
 	}
 
 	@Override
@@ -56,7 +53,7 @@ public class UpdateSlashCommands extends Command {
 							break;
 						case "global":
 							// Register global commands
-							jda.updateCommands()
+							jda.getShards().get(0).updateCommands()
 									.addCommands(generateSlashCommands())
 									.queue(cmds -> event.getChannel()
 											.sendMessageEmbeds(defaultEmbed(

@@ -24,30 +24,60 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
+@Slf4j
 public class JacobContest {
 
 	private long time;
 	private List<String> crops;
 
 	public boolean reminderHasPassed() {
-		return Instant.now().isAfter(getTimeInstant().minusSeconds(301));
+		try {
+			return Instant.now().isAfter(getTimeInstant().minusSeconds(301));
+		} catch (Exception e) {
+			log.error("Error checking if reminder has passed: " + e.getMessage());
+			return true; // Consider it passed if there's an error
+		}
 	}
 
 	public Instant getTimeInstant() {
-		return Instant.ofEpochMilli(time);
+		try {
+			return Instant.ofEpochMilli(time);
+		} catch (Exception e) {
+			log.error("Error converting time to Instant: " + e.getMessage());
+			return Instant.now(); // Return current time as fallback
+		}
 	}
 
 	public Duration getDurationUntil() {
-		return Duration.between(Instant.now(), getTimeInstant());
+		try {
+			return Duration.between(Instant.now(), getTimeInstant());
+		} catch (Exception e) {
+			log.error("Error calculating duration: " + e.getMessage());
+			return Duration.ZERO; // Return zero duration as fallback
+		}
 	}
 
 	public String getCropsFormatted() {
+		if (crops == null) {
+			log.error("Crops list is null");
+			return "No crops available";
+		}
+
 		StringBuilder cropsFormatted = new StringBuilder();
 		for (String crop : crops) {
-			cropsFormatted.append(cropNameToEmoji.get(crop)).append(" ").append(crop).append("\n");
+			if (crop == null) {
+				continue;
+			}
+
+			String emoji = cropNameToEmoji.get(crop);
+			if (emoji != null) {
+				cropsFormatted.append(emoji).append(" ");
+			}
+			cropsFormatted.append(crop).append("\n");
 		}
-		return cropsFormatted.toString();
+		return cropsFormatted.length() > 0 ? cropsFormatted.toString() : "No crops available";
 	}
 }

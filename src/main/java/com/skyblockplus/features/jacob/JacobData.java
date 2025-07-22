@@ -21,8 +21,10 @@ package com.skyblockplus.features.jacob;
 import java.util.Iterator;
 import java.util.List;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
+@Slf4j
 public class JacobData {
 
 	private boolean complete = true;
@@ -30,13 +32,28 @@ public class JacobData {
 	private List<JacobContest> contests;
 
 	public JacobContest getNextContest() {
-		for (Iterator<JacobContest> iterator = contests.iterator(); iterator.hasNext();) {
-			JacobContest contest = iterator.next();
-			if (contest.reminderHasPassed()) {
-				iterator.remove();
-			} else {
-				return contest;
+		if (contests == null) {
+			complete = false;
+			log.error("Contests list is null");
+			return null;
+		}
+
+		try {
+			for (Iterator<JacobContest> iterator = contests.iterator(); iterator.hasNext();) {
+				JacobContest contest = iterator.next();
+				if (contest == null) {
+					continue;
+				}
+
+				if (contest.reminderHasPassed()) {
+					iterator.remove();
+				} else {
+					return contest;
+				}
 			}
+		} catch (Exception e) {
+			complete = false;
+			log.error("Error processing contests: " + e.getMessage());
 		}
 		return null;
 	}

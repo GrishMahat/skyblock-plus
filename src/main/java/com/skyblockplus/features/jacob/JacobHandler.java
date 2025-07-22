@@ -25,12 +25,16 @@ import static com.skyblockplus.utils.utils.JsonUtils.collectJsonArray;
 import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
 import static com.skyblockplus.utils.utils.Utils.*;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
 import com.google.gson.JsonObject;
 import com.skyblockplus.features.listeners.AutomaticGuild;
 import java.util.concurrent.TimeUnit;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 
 public class JacobHandler {
+  private static final Logger log = LoggerFactory.getLogger(JacobHandler.class);
 
 	private static JacobData jacobData = null;
 
@@ -94,12 +98,23 @@ public class JacobHandler {
 	}
 
 	public static void setJacobDataFromApi() {
-		JsonObject rawJacobData = getJsonObject("https://api.elitebot.dev/Contests/at/" + getSkyblockYear());
+    String url = "https://api.elitebot.dev/Contests/at/" + getSkyblockYear();
+    JsonObject rawJacobData = getJsonObject(url);
+    if (rawJacobData == null) {
+        log.error("Failed to fetch Jacob data from API");
+        return;
+    }
+
+		JsonObject contests = rawJacobData.getAsJsonObject("contests");
+		if (contests == null) {
+			log.error("No contests data found in Jacob API response");
+			return;
+		}
+
 		rawJacobData.add(
 			"contests",
 			collectJsonArray(
-				rawJacobData
-					.getAsJsonObject("contests")
+				contests
 					.entrySet()
 					.stream()
 					.map(e -> {

@@ -29,6 +29,9 @@ import static com.skyblockplus.utils.utils.JsonUtils.*;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.features.listeners.AutomaticGuild;
@@ -45,6 +48,7 @@ import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import org.apache.http.client.utils.URIBuilder;
 
 public class MayorHandler {
+  private static final Logger log = LoggerFactory.getLogger(MayorHandler.class);
 
 	public static String currentMayor = "";
 	public static String currentJerryMayor = "";
@@ -172,7 +176,7 @@ public class MayorHandler {
 				jerryEmbed = errorEmbed("Jerry is not currently mayor").build();
 				return;
 			}
-
+      // TODO: Replace Skytils API with  Rust backend for mayor data when available.  and add mayer router in backend
 			JsonElement jerryJson = higherDepth(getJson("https://api.skytils.gg/api/mayor/jerry"), "mayor");
 			currentJerryMayor = higherDepth(jerryJson, "name").getAsString();
 			EmbedBuilder eb = defaultEmbed(currentJerryMayor)
@@ -191,16 +195,59 @@ public class MayorHandler {
 
 	public static void updateCurrentElection() {
 		try {
-			JsonElement cur = higherDepth(getJson(getHypixelApiUrl("/resources/skyblock/election", false)), "current");
+			JsonElement response = getJson(getHypixelApiUrl("/resources/skyblock/election", false));
+			if (response == null) {
+				log.error("Failed to fetch election data from Hypixel API");
+				return;
+			}
+
+			JsonElement cur = higherDepth(response, "current");
+			if (cur == null) {
+				log.warn("No current election data found");
+				return;
+			}
 			if (higherDepth(cur, "candidates") == null) { // Election not open
 				return;
 			}
 
+			JsonElement candidatesElement = higherDepth(cur, "candidates");
+			if (!(candidatesElement instanceof JsonArray)) {
+				log.warn("Candidates data is not an array");
+				return;
+			}
+			JsonArray candidates = candidatesElement.getAsJsonArray();
+			if (candidates == null) {
+				log.warn("No candidates found in election data");
+				return;
+			}
+
 			JsonArray curMayors = collectJsonArray(
-				streamJsonArray(higherDepth(cur, "candidates")).sorted(Comparator.comparingInt(m -> -higherDepth(m, "votes").getAsInt()))
+				streamJsonArray(candidates)
+					.filter(m -> higherDepth(m, "votes") != null)
+					.sorted(Comparator.comparingInt(m -> {
+						JsonElement votes = higherDepth(m, "votes");
+						return votes != null ? -votes.getAsInt() : 0;
+					}))
 			);
-			double totalVotes = streamJsonArray(curMayors).mapToInt(m -> higherDepth(m, "votes").getAsInt()).sum();
-			int year = higherDepth(cur, "year").getAsInt();
+
+			if (curMayors.isEmpty()) {
+				log.warn("No valid mayor candidates found");
+				return;
+			}
+
+			double totalVotes = streamJsonArray(curMayors)
+				.mapToInt(m -> {
+					JsonElement votes = higherDepth(m, "votes");
+					return votes != null ? votes.getAsInt() : 0;
+				})
+				.sum();
+
+			JsonElement yearElement = higherDepth(cur, "year");
+			if (yearElement == null) {
+				log.warn("No year found in election data");
+				return;
+			}
+			int year = yearElement.getAsInt();
 			EmbedBuilder eb = defaultEmbed("Mayor Election Open | Year " + year);
 			eb.setDescription(
 				"**Year:** " +

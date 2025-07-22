@@ -50,10 +50,11 @@ import jakarta.annotation.PreDestroy;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -122,12 +123,19 @@ public class Main {
 			"Loaded " + client.getCommands().size() + " prefix commands and " + slashCommandClient.getCommands().size() + " slash commands"
 		);
 
-		allServerSettings =
-			!IS_DEV
-				? database.getAllServerSettings().stream().collect(Collectors.toMap(ServerSettingsModel::getServerId, Function.identity()))
-				: Stream
-					.of(PRIMARY_GUILD_ID, "782154976243089429", "869217817680044042")
-					.collect(Collectors.toMap(Function.identity(), e -> database.getServerSettingsModel(e), (e1, e2) -> e1));
+		if (!IS_DEV) {
+			allServerSettings = database.getAllServerSettings().stream()
+				.collect(Collectors.toMap(ServerSettingsModel::getServerId, Function.identity()));
+		} else {
+			// In dev mode, initialize with an empty HashMap if no settings exist
+			allServerSettings = new HashMap<>();
+			for (String id : Arrays.asList(PRIMARY_GUILD_ID, "782154976243089429", "869217817680044042")) {
+				ServerSettingsModel settings = database.getServerSettingsModel(id);
+				if (settings != null) {
+					allServerSettings.put(settings.getServerId(), settings);
+				}
+			}
+		}
 		log.info("Loaded all server settings");
 
 		DefaultShardManagerBuilder jdaBuilder = DefaultShardManagerBuilder
@@ -140,9 +148,9 @@ public class Main {
 				new ExceptionEventListener(new MainListener())
 			)
 			.setActivity(Activity.playing("Loading..."))
-			.setMemberCachePolicy(MemberCachePolicy.ALL)
+			.setMemberCachePolicy(MemberCachePolicy.DEFAULT)
 			.disableCache(CacheFlag.VOICE_STATE, CacheFlag.STICKER, CacheFlag.FORUM_TAGS, CacheFlag.SCHEDULED_EVENTS)
-			.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.MESSAGE_CONTENT)
+			.enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_EMOJIS_AND_STICKERS)
 			.setEnableShutdownHook(false);
 		if (IS_DEV) {
 			jdaBuilder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
@@ -157,23 +165,41 @@ public class Main {
 			}
 		}
 
-		if (!rendersDirectory.exists()) {
-			log.info((rendersDirectory.mkdirs() ? "Successfully created" : "Failed to create") + " lore render directory");
-		} else {
-			File[] loreRendersDirFiles = rendersDirectory.listFiles();
-			if (loreRendersDirFiles != null) {
-				Arrays.stream(loreRendersDirFiles).forEach(File::delete);
+		try {
+			log.info("Waiting for JDA shards to be ready...");
+			for (JDA shard : jda.getShards()) {
+				shard.awaitReady();
 			}
-		}
+			log.info("All JDA shards are ready");
 
-		ApiHandler.initialize();
-		AuctionTracker.initialize();
-		AuctionFlipper.initialize(!IS_DEV);
-		ApiController.initialize();
-		FetchurHandler.initialize();
-		scheduler.scheduleWithFixedDelay(MayorHandler::initialize, 1, 5, TimeUnit.MINUTES);
-		JacobHandler.initialize();
-		EventHandler.initialize();
+			if (!rendersDirectory.exists()) {
+				log.info((rendersDirectory.mkdirs() ? "Successfully created" : "Failed to create") + " lore render directory");
+			} else {
+				File[] loreRendersDirFiles = rendersDirectory.listFiles();
+				if (loreRendersDirFiles != null) {
+					Arrays.stream(loreRendersDirFiles).forEach(File::delete);
+				}
+			}
+
+			try {
+				ApiHandler.initialize();
+				AuctionTracker.initialize();
+				AuctionFlipper.initialize(!IS_DEV);
+				ApiController.initialize();
+				FetchurHandler.initialize();
+				scheduler.scheduleWithFixedDelay(MayorHandler::initialize, 1, 5, TimeUnit.MINUTES);
+        JacobHandler.initialize();
+				EventHandler.initialize();
+
+				log.info("All services initialized successfully");
+			} catch (Exception e) {
+				log.error("Error during service initialization", e);
+				// Continue running even if some initializations fail
+			}
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+			throw new RuntimeException("Failed to initialize bot: JDA initialization interrupted", e);
+		}
 
 		if (!IS_DEV) {
 			scheduler.scheduleWithFixedDelay(
