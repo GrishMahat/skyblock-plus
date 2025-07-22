@@ -83,7 +83,7 @@ public class MainListener extends ListenerAdapter {
 		database.deleteServerSettings(event.getGuild().getId());
 
 		try {
-			logCommand(event.getGuild(), "Left guild | Users: " + event.getGuild().getMemberCount());
+			logCommand(event.getGuild(), event.getJDA().getSelfUser(), "Left guild | Users: " + event.getGuild().getMemberCount());
 		} catch (Exception ignored) {}
 	}
 
@@ -148,6 +148,7 @@ public class MainListener extends ListenerAdapter {
 				.queue(metaData ->
 					logCommand(
 						event.getGuild(),
+						event.getJDA().getSelfUser(),
 						"Joined guild | #" + jda.getGuilds().size() + " | Users: " + metaData.getApproximateMembers()
 					)
 				);

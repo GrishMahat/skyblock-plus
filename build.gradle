@@ -70,20 +70,19 @@ dependencies {
     implementation 'club.minnced:discord-webhooks:0.8.4'
 
     // JDA utilities
-    implementation 'pw.chew:jda-chewtils:2.0-SNAPSHOT'
-    // implementation 'com.github.chew.jda-chewtils:jda-chewtils:e9fbfeadc3'
+    implementation 'pw.chew:jda-chewtils:2.1'
 
     // JSON
-    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'com.google.code.gson:gson:2.13.1'
 
     // NBT parser
     implementation 'me.nullicorn:Nedit:2.2.0'
 
     // Spring boot and postgresql
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.3.1'
-    implementation 'org.springframework.boot:spring-boot-starter-security:3.3.1'
-    implementation 'org.springframework.boot:spring-boot-starter-web:3.3.1'
-    runtimeOnly 'org.postgresql:postgresql:42.7.3'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.5.3'
+    runtimeOnly 'org.postgresql:postgresql:42.7.7'
 
     // Http client
     implementation 'org.apache.httpcomponents:httpclient:4.5.14'

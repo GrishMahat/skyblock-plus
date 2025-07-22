@@ -53,8 +53,10 @@ public class EventHandler {
 	}
 
 	public static void setEventTimers(List<Long> eventTimers) {
-		EventHandler.eventTimers.clear();
-		EventHandler.eventTimers.addAll(eventTimers);
+		if (eventTimers != null) {
+			EventHandler.eventTimers.clear();
+			EventHandler.eventTimers.addAll(eventTimers);
+		}
 	}
 
 	public static void updateEvents() {

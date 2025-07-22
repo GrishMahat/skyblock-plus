@@ -812,7 +812,10 @@ public class LeaderboardDatabase {
 		}
 
 		try {
-			slashCommandClient.setCommandUses(gson.fromJson(selectFromJsonStorage(JsonStorageId.COMMAND_USES), new TypeToken<>() {}));
+			Map<String, Integer> commandUses = gson.fromJson(selectFromJsonStorage(JsonStorageId.COMMAND_USES), new TypeToken<>() {});
+			if (commandUses != null) {
+				slashCommandClient.setCommandUses(commandUses);
+			}
 		} catch (Exception e) {
 			log.error("", e);
 		}
@@ -824,9 +827,13 @@ public class LeaderboardDatabase {
 		}
 
 		try {
-			AuctionTracker.commandAuthorToTrackingUser.putAll(
-				gson.fromJson(selectFromJsonStorage(JsonStorageId.AUCTION_TRACKER), new TypeToken<Map<String, UsernameUuidStruct>>() {})
+			Map<String, UsernameUuidStruct> auctionTracker = gson.fromJson(
+				selectFromJsonStorage(JsonStorageId.AUCTION_TRACKER),
+				new TypeToken<Map<String, UsernameUuidStruct>>() {}
 			);
+			if (auctionTracker != null) {
+				AuctionTracker.commandAuthorToTrackingUser.putAll(auctionTracker);
+			}
 		} catch (Exception e) {
 			log.error("", e);
 		}
@@ -862,9 +869,13 @@ public class LeaderboardDatabase {
 		}
 
 		try {
-			oAuthClient
-				.getTokensMap()
-				.putAll(gson.fromJson(selectFromJsonStorage(JsonStorageId.TOKENS), new TypeToken<Map<String, TokenData>>() {}));
+			Map<String, TokenData> tokens = gson.fromJson(
+				selectFromJsonStorage(JsonStorageId.TOKENS),
+				new TypeToken<Map<String, TokenData>>() {}
+			);
+			if (tokens != null) {
+				oAuthClient.getTokensMap().putAll(tokens);
+			}
 		} catch (Exception e) {
 			log.error("", e);
 		}
@@ -876,7 +887,13 @@ public class LeaderboardDatabase {
 		}
 
 		try {
-			parties.putAll(gson.fromJson(selectFromJsonStorage(JsonStorageId.PARTIES), new TypeToken<Map<String, List<Party>>>() {}));
+			Map<String, List<Party>> partiesMap = gson.fromJson(
+				selectFromJsonStorage(JsonStorageId.PARTIES),
+				new TypeToken<Map<String, List<Party>>>() {}
+			);
+			if (partiesMap != null) {
+				parties.putAll(partiesMap);
+			}
 		} catch (Exception e) {
 			log.error("", e);
 		}
@@ -888,7 +905,10 @@ public class LeaderboardDatabase {
 		}
 
 		try {
-			EventHandler.setEventTimers(gson.fromJson(selectFromJsonStorage(JsonStorageId.EVENT_TIMERS), new TypeToken<List<Long>>() {}));
+			List<Long> eventTimers = gson.fromJson(selectFromJsonStorage(JsonStorageId.EVENT_TIMERS), new TypeToken<List<Long>>() {});
+			if (eventTimers != null) {
+				EventHandler.setEventTimers(eventTimers);
+			}
 		} catch (Exception e) {
 			log.error("", e);
 		}

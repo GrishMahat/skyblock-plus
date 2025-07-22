@@ -150,7 +150,7 @@ public class Main {
 			.setActivity(Activity.playing("Loading..."))
 			.setMemberCachePolicy(MemberCachePolicy.DEFAULT)
 			.disableCache(CacheFlag.VOICE_STATE, CacheFlag.STICKER, CacheFlag.FORUM_TAGS, CacheFlag.SCHEDULED_EVENTS)
-			.enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_EMOJIS_AND_STICKERS)
+			.enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS)
 			.setEnableShutdownHook(false);
 		if (IS_DEV) {
 			jdaBuilder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
