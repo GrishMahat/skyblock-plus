@@ -18,9 +18,6 @@
 
 package com.skyblockplus.utils.utils;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -28,17 +25,6 @@ import com.google.gson.stream.JsonReader;
 import com.skyblockplus.utils.SkyblockProfilesParser;
 import com.skyblockplus.utils.exceptionhandler.ExceptionExecutor;
 import com.skyblockplus.utils.structs.JsonResponse;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 import okhttp3.OkHttpClient;
 import org.apache.http.Header;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -51,6 +37,21 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class HttpUtils {
 

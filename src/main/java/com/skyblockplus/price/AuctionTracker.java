@@ -18,22 +18,23 @@
 
 package com.skyblockplus.price;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.skyblockplus.utils.structs.InvItem;
+import com.skyblockplus.utils.structs.UsernameUuidStruct;
+import net.dv8tion.jda.api.EmbedBuilder;
+
+import java.time.Instant;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import static com.skyblockplus.utils.ApiHandler.getHypixelApiUrl;
 import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
 import static com.skyblockplus.utils.utils.HttpUtils.getJson;
 import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.*;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.skyblockplus.utils.structs.InvItem;
-import com.skyblockplus.utils.structs.UsernameUuidStruct;
-import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import net.dv8tion.jda.api.EmbedBuilder;
 
 public class AuctionTracker {
 

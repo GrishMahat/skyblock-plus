@@ -19,10 +19,11 @@
 package com.skyblockplus.utils.command;
 
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 
 public abstract class SlashCommand extends AbstractSlashCommand {
 

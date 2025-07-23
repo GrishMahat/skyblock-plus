@@ -18,20 +18,21 @@
 
 package com.skyblockplus.utils;
 
-import static com.skyblockplus.utils.ApiHandler.playerFromUuid;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.cleanMcCodes;
-import static com.skyblockplus.utils.utils.StringUtils.getAvatarUrl;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
 import com.skyblockplus.utils.utils.Utils;
-import java.time.Instant;
 import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
+
+import java.time.Instant;
+
+import static com.skyblockplus.utils.ApiHandler.playerFromUuid;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.cleanMcCodes;
+import static com.skyblockplus.utils.utils.StringUtils.getAvatarUrl;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 public class HypixelPlayer {
 

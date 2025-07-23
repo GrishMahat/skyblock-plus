@@ -18,12 +18,12 @@
 
 package com.skyblockplus.utils.exceptionhandler;
 
-import static com.skyblockplus.utils.utils.Utils.globalExceptionHandler;
-
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+
+import static com.skyblockplus.utils.utils.Utils.globalExceptionHandler;
 
 public class ExceptionScheduler extends ScheduledThreadPoolExecutor {
 

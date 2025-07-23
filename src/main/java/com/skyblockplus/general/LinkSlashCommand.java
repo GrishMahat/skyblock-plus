@@ -18,17 +18,6 @@
 
 package com.skyblockplus.general;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.ApiHandler.getGuildFromPlayer;
-import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
-import static com.skyblockplus.utils.Constants.DUNGEON_CLASS_NAMES;
-import static com.skyblockplus.utils.Constants.EMBLEM_NAME_TO_ICON;
-import static com.skyblockplus.utils.utils.HypixelUtils.getPlayerDiscordInfo;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
 import com.skyblockplus.miscellaneous.RolesSlashCommand;
@@ -39,13 +28,6 @@ import com.skyblockplus.utils.oauth.TokenData;
 import com.skyblockplus.utils.structs.DiscordInfoStruct;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import groovy.lang.Tuple3;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
@@ -58,6 +40,25 @@ import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.springframework.stereotype.Component;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.ApiHandler.getGuildFromPlayer;
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.Constants.DUNGEON_CLASS_NAMES;
+import static com.skyblockplus.utils.Constants.EMBLEM_NAME_TO_ICON;
+import static com.skyblockplus.utils.utils.HypixelUtils.getPlayerDiscordInfo;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class LinkSlashCommand extends SlashCommand {

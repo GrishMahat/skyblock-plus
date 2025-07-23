@@ -18,11 +18,6 @@
 
 package com.skyblockplus.miscellaneous.weight;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.skyblockplus.miscellaneous.weight.cole.ColeWeight;
 import com.skyblockplus.miscellaneous.weight.lily.LilyWeight;
 import com.skyblockplus.miscellaneous.weight.senither.SenitherWeight;
@@ -37,6 +32,11 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class WeightSlashCommand extends SlashCommand {

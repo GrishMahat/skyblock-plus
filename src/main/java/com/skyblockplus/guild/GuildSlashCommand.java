@@ -18,16 +18,6 @@
 
 package com.skyblockplus.guild;
 
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
-import static com.skyblockplus.utils.utils.HypixelUtils.guildExpToLevel;
-import static com.skyblockplus.utils.utils.HypixelUtils.levelingInfoFromLevel;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -37,14 +27,6 @@ import com.skyblockplus.utils.command.*;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
-import java.io.FileReader;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.BiConsumer;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.InteractionHook;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -55,6 +37,25 @@ import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import org.springframework.stereotype.Component;
+
+import java.io.FileReader;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.ApiHandler.*;
+import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
+import static com.skyblockplus.utils.utils.HypixelUtils.guildExpToLevel;
+import static com.skyblockplus.utils.utils.HypixelUtils.levelingInfoFromLevel;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class GuildSlashCommand extends SlashCommand {

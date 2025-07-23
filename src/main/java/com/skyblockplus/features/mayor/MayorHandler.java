@@ -18,6 +18,29 @@
 
 package com.skyblockplus.features.mayor;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.skyblockplus.features.listeners.AutomaticGuild;
+import com.skyblockplus.miscellaneous.CalendarSlashCommand;
+import com.skyblockplus.utils.ApiHandler;
+import com.skyblockplus.utils.utils.HttpUtils;
+import com.skyblockplus.utils.utils.JsonUtils;
+import com.skyblockplus.utils.utils.StringUtils;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import org.apache.http.client.utils.URIBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.time.Instant;
+import java.util.Comparator;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import static com.skyblockplus.features.listeners.MainListener.guildMap;
 import static com.skyblockplus.miscellaneous.CalendarSlashCommand.YEAR_0;
 import static com.skyblockplus.miscellaneous.CalendarSlashCommand.getSkyblockYear;
@@ -28,24 +51,6 @@ import static com.skyblockplus.utils.utils.HttpUtils.getJson;
 import static com.skyblockplus.utils.utils.JsonUtils.*;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.*;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.skyblockplus.features.listeners.AutomaticGuild;
-import java.io.File;
-import java.time.Instant;
-import java.util.Comparator;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import javax.imageio.ImageIO;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.MessageEmbed;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
-import org.apache.http.client.utils.URIBuilder;
 
 public class MayorHandler {
   private static final Logger log = LoggerFactory.getLogger(MayorHandler.class);
@@ -60,7 +65,7 @@ public class MayorHandler {
 	public static void initialize() {
 		try {
 			if (currentMayor.isEmpty()) {
-				JsonElement mayorJson = getJson(getHypixelApiUrl("/resources/skyblock/election", false));
+				JsonElement mayorJson = getJson(getHypixelApiUrl("/v2/resources/skyblock/election", false));
 				currentMayor = higherDepth(mayorJson, "mayor.name", "");
 				currentMayorYear = higherDepth(mayorJson, "mayor.election.year", 0);
 			}
@@ -72,9 +77,7 @@ public class MayorHandler {
 
 			updateCurrentElection();
 
-			if (currentMayor.equals("Jerry") && jerryFuture == null) {
-				jerryFuture = scheduler.schedule(MayorHandler::updateMayorJerryRotations, 30, TimeUnit.SECONDS);
-			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -85,7 +88,7 @@ public class MayorHandler {
 		Button button = null;
 
 		try {
-			JsonElement cur = higherDepth(getJson(getHypixelApiUrl("/resources/skyblock/election", false)), "mayor");
+			JsonElement cur = higherDepth(getJson(getHypixelApiUrl("/v2/resources/skyblock/election", false)), "mayor");
 			JsonArray mayors = collectJsonArray(
 				streamJsonArray(higherDepth(cur, "election.candidates"))
 					.sorted(Comparator.comparingInt(m -> -higherDepth(m, "votes").getAsInt()))
@@ -169,33 +172,11 @@ public class MayorHandler {
 		}
 	}
 
-	public static void updateMayorJerryRotations() {
-		try {
-			if (!currentMayor.equals("Jerry")) {
-				jerryFuture = null;
-				jerryEmbed = errorEmbed("Jerry is not currently mayor").build();
-				return;
-			}
-      // TODO: Replace Skytils API with  Rust backend for mayor data when available.  and add mayer router in backend
-			JsonElement jerryJson = higherDepth(getJson("https://api.skytils.gg/api/mayor/jerry"), "mayor");
-			currentJerryMayor = higherDepth(jerryJson, "name").getAsString();
-			EmbedBuilder eb = defaultEmbed(currentJerryMayor)
-				.setThumbnail("https://mc-heads.net/body/" + MAYOR_NAME_TO_SKIN.get(currentJerryMayor.toUpperCase()) + "/left");
-			for (JsonElement perk : higherDepth(jerryJson, "perks").getAsJsonArray()) {
-				eb.addField(higherDepth(perk, "name").getAsString(), higherDepth(perk, "description").getAsString(), false);
-			}
 
-			jerryEmbed = eb.build();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		jerryFuture = scheduler.schedule(MayorHandler::updateMayorJerryRotations, 5, TimeUnit.MINUTES);
-	}
 
 	public static void updateCurrentElection() {
 		try {
-			JsonElement response = getJson(getHypixelApiUrl("/resources/skyblock/election", false));
+			JsonElement response = getJson(getHypixelApiUrl("/v2/resources/skyblock/election", false));
 			if (response == null) {
 				log.error("Failed to fetch election data from Hypixel API");
 				return;
@@ -339,4 +320,99 @@ public class MayorHandler {
 			e.printStackTrace();
 		}
 	}
+  public static EmbedBuilder getMayorEmbed() {
+        JsonElement response = HttpUtils.getJson(ApiHandler.getHypixelApiUrl("/v2/resources/skyblock/election", false));
+        EmbedBuilder eb = new EmbedBuilder();
+
+        if (response == null) {
+            eb.setDescription("Failed to fetch election data from Hypixel API.");
+            return eb;
+        }
+
+        JsonElement mayorData = JsonUtils.higherDepth(response, "mayor");
+        JsonElement electionData = JsonUtils.higherDepth(response, "mayor.election");
+        JsonElement currentElectionData = JsonUtils.higherDepth(response, "current");
+
+        if (mayorData != null) {
+            String mayorName = JsonUtils.higherDepth(mayorData, "name").getAsString();
+            eb.setTitle("\uD83D\uDC51 Current Mayor: " + mayorName);
+
+            StringBuilder perksStr = new StringBuilder();
+            if (JsonUtils.higherDepth(mayorData, "perks") instanceof JsonArray perksArray) {
+                for (JsonElement perk : perksArray) {
+                    perksStr.append("\n\u279C ")
+                            .append(JsonUtils.higherDepth(perk, "name").getAsString())
+                            .append(": ")
+                            .append(StringUtils.cleanMcCodes(JsonUtils.higherDepth(perk, "description").getAsString()));
+                }
+            }
+            eb.addField("Perks", perksStr.toString(), false);
+        }
+
+        if (electionData != null) {
+            JsonArray candidates = JsonUtils.higherDepth(electionData, "candidates").getAsJsonArray();
+            for (JsonElement candidate : candidates) {
+                JsonArray perks = JsonUtils.higherDepth(candidate, "perks").getAsJsonArray();
+                for (JsonElement perk : perks) {
+                    if (JsonUtils.higherDepth(perk, "minister") != null && JsonUtils.higherDepth(perk, "minister").getAsBoolean()) {
+                        String ministerName = JsonUtils.higherDepth(candidate, "name").getAsString();
+                        eb.addField("\uD83D\uDCBC Minister: " + ministerName, "\u279C " + JsonUtils.higherDepth(perk, "name").getAsString() + ": " + StringUtils.cleanMcCodes(JsonUtils.higherDepth(perk, "description").getAsString()), false);
+                    }
+                }
+            }
+        }
+
+        if (currentElectionData != null && currentElectionData.isJsonObject()) {
+            eb.addField("Election Status", "\uD83D\uDDF3 Ongoing", false);
+            if (JsonUtils.higherDepth(currentElectionData, "candidates") instanceof JsonArray candidatesArray) {
+                for (JsonElement candidate : candidatesArray) {
+                    String candidateName = JsonUtils.higherDepth(candidate, "name").getAsString();
+                    int votes = JsonUtils.higherDepth(candidate, "votes").getAsInt();
+                    StringBuilder candidatePerksStr = new StringBuilder();
+                    if (JsonUtils.higherDepth(candidate, "perks") instanceof JsonArray candidatePerksArray) {
+                        for (JsonElement perk : candidatePerksArray) {
+                            candidatePerksStr.append("\n\u279C ")
+                                    .append(JsonUtils.higherDepth(perk, "name").getAsString())
+                                    .append(": ")
+                                    .append(StringUtils.cleanMcCodes(JsonUtils.higherDepth(perk, "description").getAsString()));
+                        }
+                    }
+                    eb.addField(candidateName + " (" + StringUtils.formatNumber(votes) + " votes)", candidatePerksStr.toString(), false);
+                }
+            }
+        } else {
+            eb.addField("Election Status", "No ongoing election", false);
+        }
+
+        return eb;
+    }
+
+        public static EmbedBuilder getSpecialMayors() {
+        long newYearToElectionOpen = 217200000;
+        long newYearToElectionClose = 105600000;
+        int year = getSkyblockYear();
+        int nextSpecial = year % 8 == 0 ? year : ((year + 8) - (year % 8));
+
+        String[] mayorNames = new String[]{"Scorpius", "Derpy", "Jerry"};
+        EmbedBuilder eb = defaultEmbed("Next Special Mayors");
+        for (int i = nextSpecial; i < nextSpecial + 24; i += 8) {
+            int mayorIndex = 0;
+            if ((i - 8) % 24 == 0) {
+                mayorIndex = 1;
+            } else if ((i - 16) % 24 == 0) {
+                mayorIndex = 2;
+            }
+            eb.addField(
+                    mayorNameToEmoji.get(mayorNames[mayorIndex].toUpperCase()) + " " + mayorNames[mayorIndex],
+                    "Election Opens: " +
+                            getRelativeTimestamp((YEAR_0 + CalendarSlashCommand.YEAR_MS * (i - 1)) + newYearToElectionOpen) +
+                            "\nElection Closes: " +
+                            getRelativeTimestamp((YEAR_0 + CalendarSlashCommand.YEAR_MS * (i)) + newYearToElectionClose),
+                    false
+            );
+        }
+        return eb;
+    }
+
+
 }

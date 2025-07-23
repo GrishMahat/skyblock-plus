@@ -18,14 +18,15 @@
 
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-import static com.skyblockplus.utils.utils.Utils.defaultPerms;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.command.CommandExecute;
-import java.util.concurrent.TimeUnit;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.TimeUnit;
+
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import static com.skyblockplus.utils.utils.Utils.defaultPerms;
 
 @Component
 public class PurgeMessagesCommand extends Command {

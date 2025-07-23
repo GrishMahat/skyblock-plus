@@ -18,13 +18,14 @@
 
 package com.skyblockplus.features.jacob;
 
-import static com.skyblockplus.utils.Constants.cropNameToEmoji;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+
+import static com.skyblockplus.utils.Constants.cropNameToEmoji;
 
 @Data
 @Slf4j

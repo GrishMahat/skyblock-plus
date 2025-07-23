@@ -18,11 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.api.serversettings.automatedguild.ApplyRequirement;
 import com.skyblockplus.api.serversettings.automatedguild.AutomatedGuild;
 import com.skyblockplus.utils.Player;
@@ -31,13 +26,19 @@ import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.List;
-import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class CheckReqsSlashCommand extends SlashCommand {

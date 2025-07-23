@@ -18,21 +18,22 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
-import static com.skyblockplus.utils.utils.Utils.defaultPerms;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.CommandExecute;
 import com.skyblockplus.utils.utils.Utils;
+import net.dv8tion.jda.api.EmbedBuilder;
+import org.springframework.stereotype.Component;
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
-import net.dv8tion.jda.api.EmbedBuilder;
-import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
+import static com.skyblockplus.utils.utils.Utils.defaultPerms;
 
 @Component
 public class NucleusCommand extends Command {

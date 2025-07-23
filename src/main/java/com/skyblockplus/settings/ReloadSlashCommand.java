@@ -18,10 +18,6 @@
 
 package com.skyblockplus.settings;
 
-import static com.skyblockplus.features.listeners.MainListener.onApplyReload;
-import static com.skyblockplus.features.listeners.MainListener.onVerifyReload;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -30,6 +26,10 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.features.listeners.MainListener.onApplyReload;
+import static com.skyblockplus.features.listeners.MainListener.onVerifyReload;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 @Component
 public class ReloadSlashCommand extends SlashCommand {

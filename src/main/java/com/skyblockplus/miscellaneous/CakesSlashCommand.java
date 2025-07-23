@@ -18,25 +18,26 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.time.Instant;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class CakesSlashCommand extends SlashCommand {

@@ -18,16 +18,6 @@
 
 package com.skyblockplus.utils.utils;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.HttpUtils.getJson;
-import static com.skyblockplus.utils.utils.HypixelUtils.getNpcSellPrice;
-import static com.skyblockplus.utils.utils.HypixelUtils.isCrimsonArmor;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static org.springframework.util.StringUtils.countOccurrencesOf;
-
 import club.minnced.discord.webhook.external.JDAWebhookClient;
 import com.google.gson.*;
 import com.jagrosh.jdautilities.command.Command;
@@ -47,20 +37,6 @@ import com.skyblockplus.utils.exceptionhandler.GlobalExceptionHandler;
 import com.skyblockplus.utils.oauth.OAuthClient;
 import com.skyblockplus.utils.structs.HypixelKeyRecord;
 import com.skyblockplus.utils.structs.InvItem;
-import java.awt.*;
-import java.io.*;
-import java.time.Duration;
-import java.time.Instant;
-import java.util.*;
-import java.util.List;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import me.nullicorn.nedit.NBTReader;
 import me.nullicorn.nedit.type.NBTCompound;
 import me.nullicorn.nedit.type.NBTList;
@@ -84,6 +60,31 @@ import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.awt.*;
+import java.io.*;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.HttpUtils.getJson;
+import static com.skyblockplus.utils.utils.HypixelUtils.getNpcSellPrice;
+import static com.skyblockplus.utils.utils.HypixelUtils.isCrimsonArmor;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static org.springframework.util.StringUtils.countOccurrencesOf;
 
 public class Utils {
 

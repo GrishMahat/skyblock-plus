@@ -18,10 +18,6 @@
 
 package com.skyblockplus.api.controller;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
 import com.skyblockplus.api.serversettings.automatedguild.AutomatedGuild;
 import com.skyblockplus.api.serversettings.managers.ServerSettingsModel;
@@ -29,15 +25,20 @@ import com.skyblockplus.api.serversettings.managers.ServerSettingsService;
 import com.skyblockplus.features.jacob.JacobData;
 import com.skyblockplus.features.jacob.JacobHandler;
 import com.skyblockplus.general.help.HelpSlashCommand;
-import java.time.Instant;
-import java.util.*;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import org.apache.groovy.util.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.Instant;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 /** Handles requests to api subdomain */
 @RestController

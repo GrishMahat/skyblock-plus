@@ -18,9 +18,9 @@
 
 package com.skyblockplus.utils.exceptionhandler;
 
-import static com.skyblockplus.utils.utils.Utils.globalExceptionHandler;
-
 import java.util.concurrent.*;
+
+import static com.skyblockplus.utils.utils.Utils.globalExceptionHandler;
 
 public class ExceptionExecutor extends ThreadPoolExecutor {
 

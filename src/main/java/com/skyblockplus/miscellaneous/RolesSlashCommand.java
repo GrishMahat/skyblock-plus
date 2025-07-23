@@ -18,14 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.settings.SettingsExecute.allAutomatedRoles;
-import static com.skyblockplus.utils.ApiHandler.getGuildFromPlayer;
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
-import static com.skyblockplus.utils.utils.StringUtils.idToName;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
@@ -37,11 +29,6 @@ import com.skyblockplus.utils.command.Subcommand;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import groovy.lang.Tuple3;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.exceptions.PermissionException;
@@ -50,6 +37,20 @@ import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.settings.SettingsExecute.allAutomatedRoles;
+import static com.skyblockplus.utils.ApiHandler.getGuildFromPlayer;
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
+import static com.skyblockplus.utils.utils.StringUtils.idToName;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class RolesSlashCommand extends SlashCommand {

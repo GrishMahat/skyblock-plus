@@ -18,24 +18,25 @@
 
 package com.skyblockplus.skills;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.SkillsStruct;
-import java.util.List;
-import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class HotmSlashCommand extends SlashCommand {

@@ -18,9 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.Utils.client;
-
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
@@ -30,6 +27,9 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.Utils.client;
 
 @Component
 public class CheckApiSlashCommand extends SlashCommand {

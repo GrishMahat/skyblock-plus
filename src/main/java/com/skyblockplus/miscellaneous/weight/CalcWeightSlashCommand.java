@@ -18,11 +18,6 @@
 
 package com.skyblockplus.miscellaneous.weight;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.HypixelUtils.slayerLevelFromXp;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.skyblockplus.miscellaneous.weight.weight.Weight;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommand;
@@ -36,6 +31,11 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.HypixelUtils.slayerLevelFromXp;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class CalcWeightSlashCommand extends SlashCommand {

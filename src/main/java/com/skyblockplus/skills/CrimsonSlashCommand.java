@@ -18,11 +18,6 @@
 
 package com.skyblockplus.skills;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.PaginatorExtras;
@@ -30,9 +25,6 @@ import com.skyblockplus.utils.command.SelectMenuPaginator;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -40,6 +32,15 @@ import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import org.apache.groovy.util.Maps;
 import org.springframework.stereotype.Component;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class CrimsonSlashCommand extends SlashCommand {

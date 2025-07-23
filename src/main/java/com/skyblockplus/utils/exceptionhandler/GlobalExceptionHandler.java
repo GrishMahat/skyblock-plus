@@ -18,8 +18,6 @@
 
 package com.skyblockplus.utils.exceptionhandler;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.command.SlashCommandEvent;
@@ -27,6 +25,8 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.requests.restaction.MessageCreateAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class GlobalExceptionHandler implements Thread.UncaughtExceptionHandler {
 

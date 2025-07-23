@@ -18,10 +18,10 @@
 
 package com.skyblockplus.miscellaneous.weight.cole;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.skyblockplus.utils.Player;
 import lombok.Getter;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 @Getter
 public class ColeWeight {

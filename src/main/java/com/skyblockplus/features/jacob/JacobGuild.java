@@ -18,18 +18,19 @@
 
 package com.skyblockplus.features.jacob;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import com.skyblockplus.api.serversettings.automatedroles.RoleObject;
 import com.skyblockplus.features.listeners.AutomaticGuild;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import net.dv8tion.jda.api.entities.MessageEmbed;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class JacobGuild {
 

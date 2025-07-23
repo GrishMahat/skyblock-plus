@@ -18,17 +18,6 @@
 
 package com.skyblockplus.utils.database;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.miscellaneous.CalendarSlashCommand.getSkyblockYear;
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.collectionNameToId;
-import static com.skyblockplus.utils.Constants.skyblockStats;
-import static com.skyblockplus.utils.utils.HypixelUtils.levelingInfoFromExp;
-import static com.skyblockplus.utils.utils.JsonUtils.getLevelingJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.google.gson.JsonArray;
@@ -50,16 +39,28 @@ import com.skyblockplus.utils.structs.UsernameUuidStruct;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import groovy.lang.Tuple2;
+import lombok.Getter;
+import net.dv8tion.jda.api.utils.data.DataObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.*;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
-import lombok.Getter;
-import net.dv8tion.jda.api.utils.data.DataObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.miscellaneous.CalendarSlashCommand.getSkyblockYear;
+import static com.skyblockplus.utils.ApiHandler.*;
+import static com.skyblockplus.utils.Constants.collectionNameToId;
+import static com.skyblockplus.utils.Constants.skyblockStats;
+import static com.skyblockplus.utils.utils.HypixelUtils.levelingInfoFromExp;
+import static com.skyblockplus.utils.utils.JsonUtils.getLevelingJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class LeaderboardDatabase {
 

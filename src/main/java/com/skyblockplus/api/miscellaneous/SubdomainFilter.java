@@ -18,12 +18,13 @@
 
 package com.skyblockplus.api.miscellaneous;
 
-import static com.skyblockplus.utils.utils.Utils.BASE_URL;
-
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+
+import static com.skyblockplus.utils.utils.Utils.BASE_URL;
 
 @Component
 public class SubdomainFilter implements Filter {

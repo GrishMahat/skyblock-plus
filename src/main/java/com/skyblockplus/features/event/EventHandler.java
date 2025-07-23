@@ -18,15 +18,10 @@
 
 package com.skyblockplus.features.event;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.features.mayor.MayorHandler.currentJerryMayor;
-import static com.skyblockplus.features.mayor.MayorHandler.currentMayor;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.features.listeners.AutomaticGuild;
 import com.skyblockplus.miscellaneous.CalendarSlashCommand;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -34,7 +29,13 @@ import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-import net.dv8tion.jda.api.entities.MessageEmbed;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.features.mayor.MayorHandler.currentJerryMayor;
+import static com.skyblockplus.features.mayor.MayorHandler.currentMayor;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class EventHandler {
 

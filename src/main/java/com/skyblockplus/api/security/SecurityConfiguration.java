@@ -18,9 +18,6 @@
 
 package com.skyblockplus.api.security;
 
-import static com.skyblockplus.utils.utils.Utils.API_PASSWORD;
-import static com.skyblockplus.utils.utils.Utils.API_USERNAME;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -35,6 +32,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import static com.skyblockplus.utils.utils.Utils.API_PASSWORD;
+import static com.skyblockplus.utils.utils.Utils.API_USERNAME;
 
 /** Enforce authentication for private endpoints */
 @Configuration

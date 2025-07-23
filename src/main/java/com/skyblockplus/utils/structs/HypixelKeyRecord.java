@@ -18,10 +18,11 @@
 
 package com.skyblockplus.utils.structs;
 
+import lombok.ToString;
+
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.atomic.AtomicInteger;
-import lombok.ToString;
 
 @ToString
 public final class HypixelKeyRecord {

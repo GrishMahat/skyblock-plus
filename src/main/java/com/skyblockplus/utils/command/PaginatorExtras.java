@@ -18,10 +18,6 @@
 
 package com.skyblockplus.utils.command;
 
-import java.util.*;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import lombok.Data;
 import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -29,6 +25,11 @@ import net.dv8tion.jda.api.entities.MessageEmbed.Field;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Getter
 public class PaginatorExtras {

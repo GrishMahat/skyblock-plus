@@ -1,18 +1,17 @@
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.command.CommandExecute;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.skyblockplus.utils.command.SlashCommand;
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class UpdateSlashCommands extends Command {

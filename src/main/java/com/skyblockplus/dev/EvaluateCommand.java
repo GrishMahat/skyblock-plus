@@ -18,17 +18,18 @@
 
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.command.CommandExecute;
 import groovy.lang.GroovyShell;
-import java.util.Arrays;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class EvaluateCommand extends Command {

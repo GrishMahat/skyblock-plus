@@ -18,9 +18,9 @@
 
 package com.skyblockplus.utils.structs;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.google.gson.JsonElement;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public record JsonResponse(JsonElement response, Integer statusCode) {
 	public boolean isRateLimited() {

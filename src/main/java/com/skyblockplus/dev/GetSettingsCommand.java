@@ -18,15 +18,16 @@
 
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.api.serversettings.managers.ServerSettingsModel;
 import com.skyblockplus.utils.command.CommandExecute;
-import java.util.List;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class GetSettingsCommand extends Command {

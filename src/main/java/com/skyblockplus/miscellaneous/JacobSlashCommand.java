@@ -18,12 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.Constants.cropNameToEmoji;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.skyblockplus.features.jacob.JacobContest;
 import com.skyblockplus.features.jacob.JacobData;
 import com.skyblockplus.features.jacob.JacobHandler;
@@ -31,8 +25,6 @@ import com.skyblockplus.utils.command.CustomPaginator;
 import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
-import java.util.ArrayList;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -40,6 +32,15 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.Constants.cropNameToEmoji;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class JacobSlashCommand extends SlashCommand {

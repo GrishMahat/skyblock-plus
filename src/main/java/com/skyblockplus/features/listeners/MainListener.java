@@ -18,16 +18,8 @@
 
 package com.skyblockplus.features.listeners;
 
-import static com.skyblockplus.utils.utils.HttpUtils.getJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.features.setup.SetupCommandHandler;
 import com.skyblockplus.utils.AuctionFlipper;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
@@ -43,6 +35,15 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
+
+import static com.skyblockplus.utils.utils.HttpUtils.getJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class MainListener extends ListenerAdapter {
 

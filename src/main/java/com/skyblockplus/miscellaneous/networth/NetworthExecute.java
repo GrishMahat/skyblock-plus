@@ -18,13 +18,6 @@
 
 package com.skyblockplus.miscellaneous.networth;
 
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.HypixelUtils.*;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -33,17 +26,26 @@ import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.command.SelectMenuPaginator;
 import com.skyblockplus.utils.structs.InvItem;
-import java.util.*;
-import java.util.concurrent.Future;
-import java.util.regex.Matcher;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.GenericInteractionCreateEvent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.apache.groovy.util.Maps;
+
+import java.util.*;
+import java.util.concurrent.Future;
+import java.util.regex.Matcher;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static com.skyblockplus.utils.ApiHandler.getAuctionPetsByName;
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.HypixelUtils.*;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class NetworthExecute {
 

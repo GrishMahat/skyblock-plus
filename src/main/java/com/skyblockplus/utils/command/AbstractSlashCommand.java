@@ -18,15 +18,15 @@
 
 package com.skyblockplus.utils.command;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import lombok.Getter;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
 import net.dv8tion.jda.api.requests.ErrorResponse;
 import net.dv8tion.jda.api.utils.data.SerializableData;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public abstract class AbstractSlashCommand {
 

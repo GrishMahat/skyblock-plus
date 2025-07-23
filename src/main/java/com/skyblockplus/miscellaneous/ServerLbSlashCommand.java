@@ -18,13 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.CustomPaginator;
@@ -32,11 +25,6 @@ import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
-import java.util.*;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -44,6 +32,24 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
+import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.database;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class ServerLbSlashCommand extends SlashCommand {

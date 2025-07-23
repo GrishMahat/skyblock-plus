@@ -18,25 +18,26 @@
 
 package com.skyblockplus.price;
 
-import static com.skyblockplus.utils.utils.JsonUtils.getCopperJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.miscellaneous.networth.NetworthExecute;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.utils.JsonUtils.getCopperJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class CopperSlashCommand extends SlashCommand {

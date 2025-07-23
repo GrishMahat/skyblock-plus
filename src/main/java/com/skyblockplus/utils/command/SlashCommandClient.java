@@ -18,17 +18,18 @@
 
 package com.skyblockplus.utils.command;
 
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.skyblockplus.Main;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.*;
 import lombok.Getter;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.Command;
+
+import java.util.*;
+
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 public class SlashCommandClient extends ListenerAdapter {
 

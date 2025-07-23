@@ -18,8 +18,6 @@
 
 package com.skyblockplus.miscellaneous.networth;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
@@ -27,6 +25,8 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
 
 @Component
 public class NetworthSlashCommand extends SlashCommand {

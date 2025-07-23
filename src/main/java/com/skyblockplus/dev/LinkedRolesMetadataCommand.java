@@ -18,15 +18,16 @@
 
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.command.CommandExecute;
-import java.util.ArrayList;
-import java.util.List;
 import net.dv8tion.jda.api.entities.RoleConnectionMetadata;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class LinkedRolesMetadataCommand extends Command {

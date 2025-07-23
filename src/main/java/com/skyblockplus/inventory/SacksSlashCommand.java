@@ -18,25 +18,27 @@
 
 package com.skyblockplus.inventory;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.HypixelUtils.getNpcSellPrice;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.CustomPaginator;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.Comparator;
-import java.util.Map;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.Comparator;
+import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.HypixelUtils.getNpcSellPrice;
+import static com.skyblockplus.utils.utils.JsonUtils.getBazaarJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class SacksSlashCommand extends SlashCommand {

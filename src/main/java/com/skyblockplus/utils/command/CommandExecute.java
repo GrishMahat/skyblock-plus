@@ -18,13 +18,14 @@
 
 package com.skyblockplus.utils.command;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
-import java.util.regex.Matcher;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
+
+import java.util.regex.Matcher;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public abstract class CommandExecute extends CommandEvent {
 

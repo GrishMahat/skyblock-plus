@@ -18,25 +18,26 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
-import static com.skyblockplus.utils.ApiHandler.uuidToUsername;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
-import static com.skyblockplus.utils.utils.StringUtils.nameMcLink;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
+import static com.skyblockplus.utils.ApiHandler.uuidToUsername;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
+import static com.skyblockplus.utils.utils.StringUtils.nameMcLink;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class ScammerSlashCommand extends SlashCommand {

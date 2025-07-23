@@ -18,16 +18,17 @@
 
 package com.skyblockplus.utils.command;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
 import com.skyblockplus.utils.utils.Utils;
-import java.util.regex.Matcher;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
+
+import java.util.regex.Matcher;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class SlashCommandEvent extends SlashCommandInteractionEvent {
 

@@ -18,22 +18,23 @@
 
 package com.skyblockplus.dungeons;
 
+import com.google.gson.JsonElement;
+import com.skyblockplus.utils.command.SlashCommandEvent;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionEvent;
+import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import static com.skyblockplus.utils.Constants.ESSENCE_ITEM_NAMES;
 import static com.skyblockplus.utils.utils.JsonUtils.getEssenceCostsJson;
 import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 import static com.skyblockplus.utils.utils.Utils.waiter;
-
-import com.google.gson.JsonElement;
-import com.skyblockplus.utils.command.SlashCommandEvent;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionEvent;
-import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 
 public class EssenceHandler {
 

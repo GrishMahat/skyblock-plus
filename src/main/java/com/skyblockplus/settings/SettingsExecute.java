@@ -18,14 +18,6 @@
 
 package com.skyblockplus.settings;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.features.listeners.MainListener.onVerifyReload;
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.cropNameToEmoji;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -44,12 +36,6 @@ import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
 import com.vdurmont.emoji.EmojiParser;
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 import me.xdrop.fuzzywuzzy.model.BoundExtractedResult;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -67,6 +53,21 @@ import net.dv8tion.jda.api.interactions.InteractionHook;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.apache.groovy.util.Maps;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.features.listeners.MainListener.onVerifyReload;
+import static com.skyblockplus.utils.ApiHandler.*;
+import static com.skyblockplus.utils.Constants.cropNameToEmoji;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class SettingsExecute {
 

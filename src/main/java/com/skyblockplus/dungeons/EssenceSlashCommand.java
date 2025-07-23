@@ -18,22 +18,12 @@
 
 package com.skyblockplus.dungeons;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.*;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.utils.StringUtils;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -41,6 +31,17 @@ import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class EssenceSlashCommand extends SlashCommand {

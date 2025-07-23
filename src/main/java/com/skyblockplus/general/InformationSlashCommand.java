@@ -18,22 +18,23 @@
 
 package com.skyblockplus.general;
 
-import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
-import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.sun.management.OperatingSystemMXBean;
-import java.lang.management.ManagementFactory;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.springframework.stereotype.Component;
+
+import java.lang.management.ManagementFactory;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
+import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class InformationSlashCommand extends SlashCommand {

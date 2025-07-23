@@ -18,11 +18,6 @@
 
 package com.skyblockplus.slayer;
 
-import static com.skyblockplus.utils.Constants.SLAYER_EMOJI_MAP;
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
-import static com.skyblockplus.utils.utils.StringUtils.simplifyNumber;
-
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
@@ -32,6 +27,11 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.SLAYER_EMOJI_MAP;
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
+import static com.skyblockplus.utils.utils.StringUtils.simplifyNumber;
 
 @Component
 public class SlayerSlashCommand extends SlashCommand {

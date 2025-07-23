@@ -18,24 +18,25 @@
 
 package com.skyblockplus.price;
 
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.utils.StringUtils;
-import java.util.ArrayList;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.apache.commons.collections4.SetUtils;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 @Component
 public class AverageSlashCommand extends SlashCommand {

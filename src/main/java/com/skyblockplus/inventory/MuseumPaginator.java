@@ -18,23 +18,9 @@
 
 package com.skyblockplus.inventory;
 
-import static com.skyblockplus.utils.rendering.ChestRenderer.*;
-import static com.skyblockplus.utils.utils.JsonUtils.getMuseumCategoriesJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommandEvent;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.time.Instant;
-import java.util.*;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import javax.imageio.ImageIO;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
@@ -49,6 +35,21 @@ import net.dv8tion.jda.api.utils.FileUpload;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageEditData;
 import org.apache.groovy.util.Maps;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.time.Instant;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static com.skyblockplus.utils.rendering.ChestRenderer.*;
+import static com.skyblockplus.utils.utils.JsonUtils.getMuseumCategoriesJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class MuseumPaginator {
 

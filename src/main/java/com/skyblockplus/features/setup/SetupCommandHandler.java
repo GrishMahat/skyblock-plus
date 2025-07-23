@@ -18,21 +18,10 @@
 
 package com.skyblockplus.features.setup;
 
-import static com.skyblockplus.features.listeners.MainListener.onApplyReload;
-import static com.skyblockplus.features.listeners.MainListener.onVerifyReload;
-import static com.skyblockplus.utils.Constants.cropNameToEmoji;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.skyblockplus.api.serversettings.automatedguild.AutomatedGuild;
 import com.skyblockplus.settings.SettingsExecute;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
@@ -48,6 +37,18 @@ import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 import net.dv8tion.jda.api.interactions.components.text.TextInput;
 import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.features.listeners.MainListener.onApplyReload;
+import static com.skyblockplus.features.listeners.MainListener.onVerifyReload;
+import static com.skyblockplus.utils.Constants.cropNameToEmoji;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class SetupCommandHandler {
 

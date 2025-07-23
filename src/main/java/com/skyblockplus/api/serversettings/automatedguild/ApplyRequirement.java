@@ -21,13 +21,14 @@ package com.skyblockplus.api.serversettings.automatedguild;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 @Getter
 @Setter

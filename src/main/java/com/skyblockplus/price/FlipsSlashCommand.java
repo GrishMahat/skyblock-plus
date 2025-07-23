@@ -18,6 +18,19 @@
 
 package com.skyblockplus.price;
 
+import com.google.gson.JsonElement;
+import com.skyblockplus.utils.command.SlashCommand;
+import com.skyblockplus.utils.command.SlashCommandEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import static com.skyblockplus.utils.AuctionFlipper.underBinJson;
 import static com.skyblockplus.utils.AuctionFlipper.underBinJsonLastUpdated;
 import static com.skyblockplus.utils.utils.HypixelUtils.calculateWithTaxes;
@@ -26,18 +39,6 @@ import static com.skyblockplus.utils.utils.JsonUtils.getAveragePriceJson;
 import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.*;
-
-import com.google.gson.JsonElement;
-import com.skyblockplus.utils.command.SlashCommand;
-import com.skyblockplus.utils.command.SlashCommandEvent;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.stream.Collectors;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import org.springframework.stereotype.Component;
 
 @Component
 public class FlipsSlashCommand extends SlashCommand {

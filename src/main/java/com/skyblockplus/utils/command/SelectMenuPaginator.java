@@ -18,14 +18,6 @@
 
 package com.skyblockplus.utils.command;
 
-import static com.skyblockplus.utils.utils.Utils.ignore;
-import static com.skyblockplus.utils.utils.Utils.waiter;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.interaction.GenericInteractionCreateEvent;
@@ -37,6 +29,15 @@ import net.dv8tion.jda.api.interactions.components.LayoutComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.Utils.ignore;
+import static com.skyblockplus.utils.utils.Utils.waiter;
 
 public class SelectMenuPaginator {
 

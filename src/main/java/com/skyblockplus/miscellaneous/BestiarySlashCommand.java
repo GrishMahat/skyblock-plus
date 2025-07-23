@@ -18,13 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.HypixelUtils.bestiaryTierFromKills;
-import static com.skyblockplus.utils.utils.JsonUtils.getBestiaryJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.PaginatorExtras;
@@ -32,14 +25,22 @@ import com.skyblockplus.utils.command.SelectMenuPaginator;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import org.springframework.stereotype.Component;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.HypixelUtils.bestiaryTierFromKills;
+import static com.skyblockplus.utils.utils.JsonUtils.getBestiaryJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class BestiarySlashCommand extends SlashCommand {

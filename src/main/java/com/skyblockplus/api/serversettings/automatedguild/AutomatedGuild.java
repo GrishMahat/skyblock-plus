@@ -23,13 +23,14 @@ import com.google.gson.annotations.Expose;
 import com.skyblockplus.api.serversettings.automatedroles.RoleObject;
 import com.skyblockplus.api.serversettings.managers.ServerSettingsModel;
 import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter

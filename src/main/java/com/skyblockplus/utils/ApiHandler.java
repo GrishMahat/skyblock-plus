@@ -18,11 +18,6 @@
 
 package com.skyblockplus.utils;
 
-import static com.skyblockplus.utils.utils.HttpUtils.*;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.google.gson.JsonArray;
@@ -35,6 +30,12 @@ import com.skyblockplus.utils.database.LeaderboardDatabase;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import com.skyblockplus.utils.structs.JsonResponse;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
+import net.dv8tion.jda.api.entities.Activity;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.message.BasicHeader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.InputStreamReader;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -42,11 +43,11 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-import net.dv8tion.jda.api.entities.Activity;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.message.BasicHeader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import static com.skyblockplus.utils.utils.HttpUtils.*;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class ApiHandler {
 

@@ -18,19 +18,20 @@
 
 package com.skyblockplus.inventory;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommandEvent;
-import java.time.Instant;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
+
+import java.time.Instant;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class InventoryEmojiPaginator {
 

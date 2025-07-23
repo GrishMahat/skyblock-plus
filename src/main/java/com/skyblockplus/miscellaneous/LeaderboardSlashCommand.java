@@ -18,10 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
-
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
@@ -32,6 +28,10 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
 
 @Component
 public class LeaderboardSlashCommand extends SlashCommand {

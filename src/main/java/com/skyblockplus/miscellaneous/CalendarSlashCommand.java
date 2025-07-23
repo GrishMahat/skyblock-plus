@@ -18,24 +18,25 @@
 
 package com.skyblockplus.miscellaneous;
 
+import com.skyblockplus.utils.command.SlashCommand;
+import com.skyblockplus.utils.command.SlashCommandEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import org.springframework.stereotype.Component;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+
 import static com.skyblockplus.features.mayor.MayorHandler.currentJerryMayor;
 import static com.skyblockplus.features.mayor.MayorHandler.currentMayor;
 import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
 import static com.skyblockplus.utils.utils.StringUtils.padStart;
 import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
-import com.skyblockplus.utils.command.SlashCommand;
-import com.skyblockplus.utils.command.SlashCommandEvent;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import org.springframework.stereotype.Component;
 
 @Component
 public class CalendarSlashCommand extends SlashCommand {

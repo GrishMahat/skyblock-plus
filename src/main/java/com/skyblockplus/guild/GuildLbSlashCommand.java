@@ -18,13 +18,6 @@
 
 package com.skyblockplus.guild;
 
-import static com.skyblockplus.utils.ApiHandler.getGuildFromName;
-import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
-import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
-import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.CustomPaginator;
 import com.skyblockplus.utils.command.SlashCommand;
@@ -32,15 +25,23 @@ import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import groovy.lang.Tuple2;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+
+import static com.skyblockplus.utils.ApiHandler.getGuildFromName;
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.Constants.gamemodeCommandOption;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.getType;
+import static com.skyblockplus.utils.database.LeaderboardDatabase.typeToNameSubMap;
+import static com.skyblockplus.utils.utils.StringUtils.*;
 
 @Component
 public class GuildLbSlashCommand extends SlashCommand {

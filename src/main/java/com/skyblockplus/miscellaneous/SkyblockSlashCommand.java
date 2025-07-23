@@ -18,12 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.ApiHandler.asyncUuidToUsername;
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.google.gson.JsonObject;
 import com.skyblockplus.miscellaneous.weight.lily.LilyWeight;
 import com.skyblockplus.miscellaneous.weight.senither.SenitherWeight;
@@ -33,16 +27,23 @@ import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+
+import static com.skyblockplus.utils.ApiHandler.asyncUuidToUsername;
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class SkyblockSlashCommand extends SlashCommand {

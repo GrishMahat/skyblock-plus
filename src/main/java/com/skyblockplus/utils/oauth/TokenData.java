@@ -18,20 +18,21 @@
 
 package com.skyblockplus.utils.oauth;
 
-import static com.skyblockplus.utils.utils.HttpUtils.asyncPutJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
 import com.skyblockplus.utils.Player;
+import lombok.Getter;
+
 import java.io.InputStreamReader;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.CompletableFuture;
-import lombok.Getter;
+
+import static com.skyblockplus.utils.utils.HttpUtils.asyncPutJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public final class TokenData {
 

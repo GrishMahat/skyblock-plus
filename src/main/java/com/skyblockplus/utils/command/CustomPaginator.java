@@ -18,16 +18,7 @@
 
 package com.skyblockplus.utils.command;
 
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
-import java.awt.*;
-import java.time.Instant;
-import java.util.*;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
@@ -46,6 +37,16 @@ import net.dv8tion.jda.api.utils.messages.*;
 import net.dv8tion.jda.internal.utils.Checks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.awt.*;
+import java.time.Instant;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 public class CustomPaginator {
 

@@ -26,14 +26,15 @@ import com.skyblockplus.api.serversettings.eventnotif.EventNotifSettings;
 import com.skyblockplus.api.serversettings.jacob.JacobSettings;
 import com.skyblockplus.api.serversettings.skyblockevent.EventSettings;
 import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter

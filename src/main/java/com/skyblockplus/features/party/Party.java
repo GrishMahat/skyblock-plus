@@ -18,10 +18,11 @@
 
 package com.skyblockplus.features.party;
 
-import java.util.ArrayList;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class Party {

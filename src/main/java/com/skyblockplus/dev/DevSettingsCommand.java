@@ -18,9 +18,6 @@
 
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.api.serversettings.skyblockevent.EventSettings;
@@ -28,6 +25,9 @@ import com.skyblockplus.settings.SettingsExecute;
 import com.skyblockplus.utils.command.CommandExecute;
 import net.dv8tion.jda.api.EmbedBuilder;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class DevSettingsCommand extends Command {

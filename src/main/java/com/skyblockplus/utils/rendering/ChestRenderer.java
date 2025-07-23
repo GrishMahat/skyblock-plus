@@ -18,8 +18,9 @@
 
 package com.skyblockplus.utils.rendering;
 
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -28,8 +29,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.imageio.ImageIO;
-import net.dv8tion.jda.api.entities.emoji.Emoji;
+
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 public class ChestRenderer {
 

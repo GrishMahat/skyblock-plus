@@ -18,23 +18,10 @@
 
 package com.skyblockplus.inventory;
 
-import static com.skyblockplus.utils.utils.StringUtils.getItemThumbnail;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.rendering.LoreRenderer;
 import com.skyblockplus.utils.structs.InvItem;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import javax.imageio.ImageIO;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
@@ -49,6 +36,20 @@ import net.dv8tion.jda.api.interactions.modals.Modal;
 import net.dv8tion.jda.api.requests.restaction.WebhookMessageEditAction;
 import net.dv8tion.jda.api.requests.restaction.interactions.MessageEditCallbackAction;
 import net.dv8tion.jda.api.utils.FileUpload;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.StringUtils.getItemThumbnail;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class InventoryListPaginator {
 

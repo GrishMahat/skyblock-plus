@@ -18,6 +18,26 @@
 
 package com.skyblockplus.price;
 
+import com.google.gson.JsonObject;
+import com.skyblockplus.utils.command.SlashCommand;
+import com.skyblockplus.utils.command.SlashCommandEvent;
+import com.skyblockplus.utils.rendering.LoreRenderer;
+import com.skyblockplus.utils.structs.AutoCompleteEvent;
+import com.skyblockplus.utils.utils.StringUtils;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import net.dv8tion.jda.api.utils.FileUpload;
+import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
+import org.springframework.stereotype.Component;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static com.skyblockplus.utils.ApiHandler.queryLowestBin;
 import static com.skyblockplus.utils.ApiHandler.uuidToUsername;
 import static com.skyblockplus.utils.utils.JsonUtils.getLowestBinJson;
@@ -25,25 +45,6 @@ import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
-import com.google.gson.JsonObject;
-import com.skyblockplus.utils.command.SlashCommand;
-import com.skyblockplus.utils.command.SlashCommandEvent;
-import com.skyblockplus.utils.rendering.LoreRenderer;
-import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import com.skyblockplus.utils.utils.StringUtils;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Collectors;
-import javax.imageio.ImageIO;
-import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import net.dv8tion.jda.api.utils.FileUpload;
-import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
-import org.springframework.stereotype.Component;
 
 @Component
 public class BinSlashCommand extends SlashCommand {

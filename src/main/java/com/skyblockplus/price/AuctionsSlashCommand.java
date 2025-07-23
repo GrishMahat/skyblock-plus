@@ -18,12 +18,6 @@
 
 package com.skyblockplus.price;
 
-import static com.skyblockplus.utils.ApiHandler.getAuctionFromPlayer;
-import static com.skyblockplus.utils.Constants.RARITY_TO_NUMBER_MAP;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -37,13 +31,6 @@ import com.skyblockplus.utils.structs.AutoCompleteEvent;
 import com.skyblockplus.utils.structs.HypixelResponse;
 import com.skyblockplus.utils.structs.InvItem;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
-import java.time.Duration;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import me.nullicorn.nedit.NBTReader;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -53,6 +40,20 @@ import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.springframework.stereotype.Component;
+
+import java.time.Duration;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static com.skyblockplus.utils.ApiHandler.getAuctionFromPlayer;
+import static com.skyblockplus.utils.Constants.RARITY_TO_NUMBER_MAP;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class AuctionsSlashCommand extends SlashCommand {

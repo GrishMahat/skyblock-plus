@@ -18,16 +18,6 @@
 
 package com.skyblockplus.features.listeners;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.features.mayor.MayorHandler.jerryEmbed;
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.DUNGEON_CLASS_NAMES;
-import static com.skyblockplus.utils.Constants.EMBLEM_NAME_TO_ICON;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.api.linkedaccounts.LinkedAccount;
@@ -38,6 +28,7 @@ import com.skyblockplus.features.apply.ApplyGuild;
 import com.skyblockplus.features.apply.ApplyUser;
 import com.skyblockplus.features.event.EventGuild;
 import com.skyblockplus.features.jacob.JacobGuild;
+import com.skyblockplus.features.mayor.MayorHandler;
 import com.skyblockplus.features.party.Party;
 import com.skyblockplus.features.skyblockevent.SkyblockEventHandler;
 import com.skyblockplus.features.skyblockevent.SkyblockEventSlashCommand;
@@ -46,7 +37,6 @@ import com.skyblockplus.general.LinkSlashCommand;
 import com.skyblockplus.general.UnlinkSlashCommand;
 import com.skyblockplus.general.help.HelpData;
 import com.skyblockplus.general.help.HelpSlashCommand;
-import com.skyblockplus.miscellaneous.MayorSlashCommand;
 import com.skyblockplus.miscellaneous.RolesSlashCommand;
 import com.skyblockplus.miscellaneous.networth.NetworthExecute;
 import com.skyblockplus.price.AuctionTracker;
@@ -55,18 +45,6 @@ import com.skyblockplus.utils.structs.HypixelResponse;
 import com.skyblockplus.utils.structs.ModifyMemberRecord;
 import groovy.lang.Tuple2;
 import groovy.lang.Tuple3;
-import java.io.File;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.OffsetDateTime;
-import java.util.*;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
-import java.util.regex.Matcher;
-import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.Setter;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -102,6 +80,28 @@ import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.util.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.features.mayor.MayorHandler.jerryEmbed;
+import static com.skyblockplus.utils.ApiHandler.*;
+import static com.skyblockplus.utils.Constants.DUNGEON_CLASS_NAMES;
+import static com.skyblockplus.utils.Constants.EMBLEM_NAME_TO_ICON;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.JsonUtils.streamJsonArray;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class AutomaticGuild {
 
@@ -953,7 +953,7 @@ public class AutomaticGuild {
 					lastMayorElectionOpenMessage = null;
 				}
 
-				if (lastMayorElectionOpenMessage != null) {
+								if (lastMayorElectionOpenMessage != null) {
 					MessageEditAction action = mayorChannel.editMessageEmbedsById(lastMayorElectionOpenMessage.getId(), embed);
 					(mayorGraphFile != null ? action.setFiles(FileUpload.fromData(mayorGraphFile)) : action).queue(
 							m -> lastMayorElectionOpenMessage = m,
@@ -962,13 +962,13 @@ public class AutomaticGuild {
 									lastMayorElectionOpenMessage = null;
 								}
 							}
-						);
+					);
 				} else {
 					MessageCreateAction action = mayorChannel.sendMessageEmbeds(embed);
 					(mayorGraphFile != null ? action.setFiles(FileUpload.fromData(mayorGraphFile)) : action).queue(
 							m -> lastMayorElectionOpenMessage = m,
 							ignore
-						);
+					);
 				}
 				return true;
 			}
@@ -1176,7 +1176,7 @@ public class AutomaticGuild {
 			HelpData matchCmd = HelpSlashCommand.helpDataList.stream().filter(cmd -> cmd.matchTo(cmdSplit[0])).findFirst().orElse(null);
 			event.replyEmbeds(matchCmd.getHelp(cmdSplit.length == 2 ? cmdSplit[1] : null).build()).setEphemeral(true).queue();
 		} else if (event.getComponentId().equals("mayor_special_button")) {
-			event.replyEmbeds(MayorSlashCommand.getSpecialMayors().build()).setEphemeral(true).queue();
+			event.replyEmbeds(MayorHandler.getSpecialMayors().build()).setEphemeral(true).queue();
 		} else if (event.getComponentId().equals("mayor_current_election_button")) {
 			Message msg = guildMap.get(PRIMARY_GUILD_ID).lastMayorElectionOpenMessage;
 			event

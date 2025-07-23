@@ -18,11 +18,11 @@
 
 package com.skyblockplus.utils.structs;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.utils.Utils;
 import net.dv8tion.jda.api.EmbedBuilder;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public record HypixelResponse(JsonElement response, String failCause) {
 	public HypixelResponse(JsonElement response) {

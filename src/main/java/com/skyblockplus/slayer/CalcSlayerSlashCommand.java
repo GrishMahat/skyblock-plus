@@ -18,13 +18,6 @@
 
 package com.skyblockplus.slayer;
 
-import static com.skyblockplus.utils.Constants.SLAYER_EMOJI_MAP;
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.JsonUtils.getLevelingJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.google.gson.JsonArray;
 import com.skyblockplus.miscellaneous.weight.weight.Weight;
 import com.skyblockplus.utils.Player;
@@ -38,6 +31,13 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.SLAYER_EMOJI_MAP;
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.JsonUtils.getLevelingJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class CalcSlayerSlashCommand extends SlashCommand {

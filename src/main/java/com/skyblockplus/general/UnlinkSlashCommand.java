@@ -18,17 +18,10 @@
 
 package com.skyblockplus.general;
 
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.Utils.database;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import groovy.lang.Tuple2;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
@@ -36,6 +29,14 @@ import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.Utils.database;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 @Component
 public class UnlinkSlashCommand extends SlashCommand {

@@ -18,12 +18,6 @@
 
 package com.skyblockplus.dungeons;
 
-import static com.skyblockplus.utils.Constants.profilesCommandOption;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
-import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.skyblockplus.miscellaneous.weight.weight.Weight;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.command.PaginatorExtras;
@@ -39,6 +33,12 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.Constants.profilesCommandOption;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.formatNumber;
+import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class CalcRunsSlashCommand extends SlashCommand {

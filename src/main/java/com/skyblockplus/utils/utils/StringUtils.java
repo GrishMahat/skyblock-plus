@@ -18,11 +18,10 @@
 
 package com.skyblockplus.utils.utils;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.JsonUtils.getInternalJsonMappings;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.google.gson.JsonElement;
+import me.xdrop.fuzzywuzzy.FuzzySearch;
+import me.xdrop.fuzzywuzzy.model.ExtractedResult;
+
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -33,8 +32,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import me.xdrop.fuzzywuzzy.FuzzySearch;
-import me.xdrop.fuzzywuzzy.model.ExtractedResult;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.JsonUtils.getInternalJsonMappings;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public class StringUtils {
 

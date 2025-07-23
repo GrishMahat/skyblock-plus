@@ -18,17 +18,18 @@
 
 package com.skyblockplus.miscellaneous.weight.lily;
 
-import static com.skyblockplus.utils.Constants.CATACOMBS_LEVEL_50_XP;
-import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.skyblockplus.miscellaneous.weight.weight.DungeonsWeight;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.structs.SkillsStruct;
 import com.skyblockplus.utils.structs.WeightStruct;
+
 import java.util.Map;
+
+import static com.skyblockplus.utils.Constants.CATACOMBS_LEVEL_50_XP;
+import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public class LilyDungeonsWeight extends DungeonsWeight {
 

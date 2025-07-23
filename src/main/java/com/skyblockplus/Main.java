@@ -18,9 +18,6 @@
 
 package com.skyblockplus;
 
-import static com.skyblockplus.utils.utils.HttpUtils.okHttpClient;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import club.minnced.discord.webhook.WebhookClientBuilder;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
@@ -47,14 +44,6 @@ import com.skyblockplus.utils.oauth.OAuthClient;
 import com.skyblockplus.utils.utils.HttpUtils;
 import com.skyblockplus.utils.utils.Utils;
 import jakarta.annotation.PreDestroy;
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -72,6 +61,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.web.firewall.HttpStatusRequestRejectedHandler;
 import org.springframework.security.web.firewall.RequestRejectedHandler;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.HttpUtils.okHttpClient;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @SpringBootApplication
 public class Main {

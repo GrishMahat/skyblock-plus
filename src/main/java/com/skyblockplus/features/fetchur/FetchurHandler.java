@@ -18,17 +18,18 @@
 
 package com.skyblockplus.features.fetchur;
 
-import static com.skyblockplus.features.listeners.MainListener.guildMap;
-import static com.skyblockplus.utils.utils.Utils.scheduler;
-
 import com.skyblockplus.features.listeners.AutomaticGuild;
 import com.skyblockplus.miscellaneous.FetchurSlashCommand;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.concurrent.TimeUnit;
-import net.dv8tion.jda.api.entities.MessageEmbed;
+
+import static com.skyblockplus.features.listeners.MainListener.guildMap;
+import static com.skyblockplus.utils.utils.Utils.scheduler;
 
 public class FetchurHandler {
 

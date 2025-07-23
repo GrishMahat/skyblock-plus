@@ -18,18 +18,12 @@
 
 package com.skyblockplus.utils.utils;
 
-import static com.skyblockplus.features.mayor.MayorHandler.currentMayor;
-import static com.skyblockplus.utils.ApiHandler.getHypixelApiUrl;
-import static com.skyblockplus.utils.ApiHandler.getQueryApiUrl;
-import static com.skyblockplus.utils.Constants.getConstant;
-import static com.skyblockplus.utils.utils.HttpUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.nameToId;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.http.client.utils.URIBuilder;
+
 import java.io.FileReader;
 import java.time.Duration;
 import java.time.Instant;
@@ -39,7 +33,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.apache.http.client.utils.URIBuilder;
+
+import static com.skyblockplus.features.mayor.MayorHandler.currentMayor;
+import static com.skyblockplus.utils.ApiHandler.getHypixelApiUrl;
+import static com.skyblockplus.utils.ApiHandler.getQueryApiUrl;
+import static com.skyblockplus.utils.Constants.getConstant;
+import static com.skyblockplus.utils.utils.HttpUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.nameToId;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class JsonUtils {
 

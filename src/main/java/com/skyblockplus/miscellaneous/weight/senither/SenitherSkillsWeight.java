@@ -18,16 +18,16 @@
 
 package com.skyblockplus.miscellaneous.weight.senither;
 
-import static com.skyblockplus.utils.Constants.SKILLS_LEVEL_50_XP;
-import static com.skyblockplus.utils.Constants.SKILLS_LEVEL_60_XP;
-import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.google.gson.JsonArray;
 import com.skyblockplus.miscellaneous.weight.weight.SkillsWeight;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.structs.SkillsStruct;
 import com.skyblockplus.utils.structs.WeightStruct;
+
+import static com.skyblockplus.utils.Constants.SKILLS_LEVEL_50_XP;
+import static com.skyblockplus.utils.Constants.SKILLS_LEVEL_60_XP;
+import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public class SenitherSkillsWeight extends SkillsWeight {
 

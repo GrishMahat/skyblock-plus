@@ -18,21 +18,22 @@
 
 package com.skyblockplus.general.help;
 
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.skyblockplus.utils.command.CustomPaginator;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.apache.groovy.util.Maps;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static com.skyblockplus.utils.utils.Utils.*;
 
 @Component
 public class HelpSlashCommand extends SlashCommand {

@@ -20,6 +20,7 @@ package com.skyblockplus.api.miscellaneous;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
+
 import java.util.HashMap;
 import java.util.Map;
 

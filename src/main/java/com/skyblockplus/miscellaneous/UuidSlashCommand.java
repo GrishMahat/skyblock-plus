@@ -18,10 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-import static com.skyblockplus.utils.utils.Utils.errorEmbed;
-
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.UsernameUuidStruct;
@@ -30,6 +26,10 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import static com.skyblockplus.utils.utils.Utils.errorEmbed;
 
 @Component
 public class UuidSlashCommand extends SlashCommand {

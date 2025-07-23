@@ -18,14 +18,14 @@
 
 package com.skyblockplus.dev;
 
-import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-import static com.skyblockplus.utils.utils.Utils.defaultPerms;
-
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.skyblockplus.utils.command.CommandExecute;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.utils.StringUtils.roundAndFormat;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import static com.skyblockplus.utils.utils.Utils.defaultPerms;
 
 @Component
 public class PlaceholderCommand extends Command {

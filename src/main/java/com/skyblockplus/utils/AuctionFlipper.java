@@ -18,6 +18,20 @@
 
 package com.skyblockplus.utils;
 
+import club.minnced.discord.webhook.WebhookClientBuilder;
+import club.minnced.discord.webhook.external.JDAWebhookClient;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import com.google.gson.JsonElement;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import static com.skyblockplus.utils.ApiHandler.getHypixelApiUrl;
 import static com.skyblockplus.utils.ApiHandler.getQueryApiUrl;
 import static com.skyblockplus.utils.utils.HttpUtils.getJson;
@@ -27,19 +41,6 @@ import static com.skyblockplus.utils.utils.HypixelUtils.isVanillaItem;
 import static com.skyblockplus.utils.utils.JsonUtils.*;
 import static com.skyblockplus.utils.utils.StringUtils.*;
 import static com.skyblockplus.utils.utils.Utils.*;
-
-import club.minnced.discord.webhook.WebhookClientBuilder;
-import club.minnced.discord.webhook.external.JDAWebhookClient;
-import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
-import com.google.gson.JsonElement;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class AuctionFlipper {
 

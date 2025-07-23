@@ -18,11 +18,11 @@
 
 package com.skyblockplus.miscellaneous.weight.lily;
 
-import static com.skyblockplus.utils.Constants.SKILL_NAMES;
-import static com.skyblockplus.utils.Constants.SLAYER_NAMES;
-
 import com.skyblockplus.miscellaneous.weight.weight.Weight;
 import com.skyblockplus.utils.Player;
+
+import static com.skyblockplus.utils.Constants.SKILL_NAMES;
+import static com.skyblockplus.utils.Constants.SLAYER_NAMES;
 
 public class LilyWeight extends Weight {
 

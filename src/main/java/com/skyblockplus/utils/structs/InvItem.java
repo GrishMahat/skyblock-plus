@@ -18,16 +18,17 @@
 
 package com.skyblockplus.utils.structs;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.StringUtils.cleanMcCodes;
-import static com.skyblockplus.utils.utils.StringUtils.idToName;
-
-import java.util.*;
-import java.util.stream.Collectors;
 import lombok.Data;
 import lombok.Setter;
 import me.nullicorn.nedit.type.NBTCompound;
 import me.nullicorn.nedit.type.NBTList;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.StringUtils.cleanMcCodes;
+import static com.skyblockplus.utils.utils.StringUtils.idToName;
 
 @Data
 public class InvItem {

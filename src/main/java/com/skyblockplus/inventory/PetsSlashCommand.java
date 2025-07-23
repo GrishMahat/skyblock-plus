@@ -18,12 +18,6 @@
 
 package com.skyblockplus.inventory;
 
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.HypixelUtils.petLevelFromXp;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.Utils.getEmoji;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.Player;
@@ -32,14 +26,21 @@ import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.structs.AutoCompleteEvent;
-import java.util.ArrayList;
-import java.util.List;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.HypixelUtils.petLevelFromXp;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.Utils.getEmoji;
 
 @Component
 public class PetsSlashCommand extends SlashCommand {

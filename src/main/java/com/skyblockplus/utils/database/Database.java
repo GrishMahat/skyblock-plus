@@ -18,9 +18,6 @@
 
 package com.skyblockplus.utils.database;
 
-import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
-import static com.skyblockplus.utils.utils.Utils.gson;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
@@ -40,6 +37,11 @@ import com.skyblockplus.api.serversettings.skyblockevent.EventSettings;
 import com.skyblockplus.general.UnlinkSlashCommand;
 import com.skyblockplus.utils.oauth.TokenData;
 import com.zaxxer.hikari.HikariDataSource;
+import net.dv8tion.jda.api.entities.Member;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,10 +50,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import net.dv8tion.jda.api.entities.Member;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import static com.skyblockplus.utils.ApiHandler.leaderboardDatabase;
+import static com.skyblockplus.utils.utils.Utils.gson;
 
 @Service
 @Transactional

@@ -18,16 +18,17 @@
 
 package com.skyblockplus.utils.structs;
 
-import static com.skyblockplus.utils.utils.Utils.updateGuildExecutor;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.internal.entities.MemberImpl;
 import org.apache.commons.collections4.SetUtils;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import static com.skyblockplus.utils.utils.Utils.updateGuildExecutor;
 
 public final class ModifyMemberRecord {
 

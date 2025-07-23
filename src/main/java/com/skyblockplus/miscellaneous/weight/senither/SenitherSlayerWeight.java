@@ -18,13 +18,13 @@
 
 package com.skyblockplus.miscellaneous.weight.senither;
 
-import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.google.gson.JsonArray;
 import com.skyblockplus.miscellaneous.weight.weight.SlayerWeight;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.structs.WeightStruct;
+
+import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public class SenitherSlayerWeight extends SlayerWeight {
 

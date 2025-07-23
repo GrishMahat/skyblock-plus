@@ -18,13 +18,6 @@
 
 package com.skyblockplus.miscellaneous;
 
-import static com.skyblockplus.utils.ApiHandler.skyblockBingoFromUuid;
-import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-import static org.springframework.util.StringUtils.countOccurrencesOf;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.skyblockplus.utils.command.SlashCommand;
@@ -38,6 +31,13 @@ import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.ApiHandler.skyblockBingoFromUuid;
+import static com.skyblockplus.utils.ApiHandler.usernameToUuid;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
+import static org.springframework.util.StringUtils.countOccurrencesOf;
 
 @Component
 public class BingoSlashCommand extends SlashCommand {

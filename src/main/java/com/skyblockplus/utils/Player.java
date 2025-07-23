@@ -18,13 +18,6 @@
 
 package com.skyblockplus.utils;
 
-import static com.skyblockplus.utils.ApiHandler.*;
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.HypixelUtils.*;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -40,9 +33,6 @@ import com.skyblockplus.utils.command.PaginatorExtras;
 import com.skyblockplus.utils.structs.*;
 import com.skyblockplus.utils.utils.StringUtils;
 import com.skyblockplus.utils.utils.Utils;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
 import lombok.Getter;
 import me.nullicorn.nedit.NBTReader;
 import me.nullicorn.nedit.type.NBTCompound;
@@ -50,6 +40,17 @@ import me.nullicorn.nedit.type.NBTList;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import org.apache.groovy.util.Maps;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.ApiHandler.*;
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.HypixelUtils.*;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class Player {
 

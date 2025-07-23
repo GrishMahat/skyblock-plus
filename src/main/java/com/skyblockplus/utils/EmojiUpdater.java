@@ -18,18 +18,19 @@
 
 package com.skyblockplus.utils;
 
-import static com.skyblockplus.utils.Constants.ENCHANT_NAMES;
-import static com.skyblockplus.utils.Constants.PET_NAMES;
-import static com.skyblockplus.utils.utils.HttpUtils.getJson;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.getPetUrl;
-import static com.skyblockplus.utils.utils.StringUtils.idToName;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.skyblockplus.utils.rendering.GifWriter;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Icon;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
+import org.eclipse.jgit.api.Git;
+
+import javax.imageio.ImageIO;
+import javax.imageio.stream.FileImageOutputStream;
+import javax.imageio.stream.ImageOutputStream;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -40,14 +41,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
-import javax.imageio.ImageIO;
-import javax.imageio.stream.FileImageOutputStream;
-import javax.imageio.stream.ImageOutputStream;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Icon;
-import net.dv8tion.jda.api.entities.emoji.Emoji;
-import org.apache.tomcat.util.http.fileupload.FileUtils;
-import org.eclipse.jgit.api.Git;
+
+import static com.skyblockplus.utils.Constants.ENCHANT_NAMES;
+import static com.skyblockplus.utils.Constants.PET_NAMES;
+import static com.skyblockplus.utils.utils.HttpUtils.getJson;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.getPetUrl;
+import static com.skyblockplus.utils.utils.StringUtils.idToName;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class EmojiUpdater {
 

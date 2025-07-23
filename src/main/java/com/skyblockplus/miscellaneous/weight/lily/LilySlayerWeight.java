@@ -18,12 +18,12 @@
 
 package com.skyblockplus.miscellaneous.weight.lily;
 
-import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
-import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
-
 import com.skyblockplus.miscellaneous.weight.weight.SlayerWeight;
 import com.skyblockplus.utils.Player;
 import com.skyblockplus.utils.structs.WeightStruct;
+
+import static com.skyblockplus.utils.utils.JsonUtils.getWeightJson;
+import static com.skyblockplus.utils.utils.JsonUtils.higherDepth;
 
 public class LilySlayerWeight extends SlayerWeight {
 

@@ -18,22 +18,10 @@
 
 package com.skyblockplus.miscellaneous.craft;
 
-import static com.skyblockplus.utils.ApiHandler.getQueryApiUrl;
-import static com.skyblockplus.utils.Constants.*;
-import static com.skyblockplus.utils.utils.HttpUtils.getJson;
-import static com.skyblockplus.utils.utils.HypixelUtils.isCrimsonArmor;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.*;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.skyblockplus.miscellaneous.networth.NetworthExecute;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import com.skyblockplus.utils.utils.StringUtils;
-import java.time.Instant;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.interaction.GenericInteractionCreateEvent;
@@ -49,6 +37,19 @@ import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
 import org.apache.groovy.util.Maps;
 import org.apache.http.client.utils.URIBuilder;
+
+import java.time.Instant;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.ApiHandler.getQueryApiUrl;
+import static com.skyblockplus.utils.Constants.*;
+import static com.skyblockplus.utils.utils.HttpUtils.getJson;
+import static com.skyblockplus.utils.utils.HypixelUtils.isCrimsonArmor;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.*;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class CraftCommandHandler {
 

@@ -18,20 +18,20 @@
 
 package com.skyblockplus.features.jacob;
 
+import com.google.gson.JsonObject;
+import com.skyblockplus.features.listeners.AutomaticGuild;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.TimeUnit;
+
 import static com.skyblockplus.features.listeners.MainListener.guildMap;
 import static com.skyblockplus.miscellaneous.CalendarSlashCommand.getSkyblockYear;
 import static com.skyblockplus.utils.utils.HttpUtils.getJsonObject;
 import static com.skyblockplus.utils.utils.JsonUtils.collectJsonArray;
 import static com.skyblockplus.utils.utils.StringUtils.getRelativeTimestamp;
 import static com.skyblockplus.utils.utils.Utils.*;
-
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
-
-import com.google.gson.JsonObject;
-import com.skyblockplus.features.listeners.AutomaticGuild;
-import java.util.concurrent.TimeUnit;
-import net.dv8tion.jda.api.entities.MessageEmbed;
 
 public class JacobHandler {
   private static final Logger log = LoggerFactory.getLogger(JacobHandler.class);

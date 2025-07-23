@@ -18,13 +18,14 @@
 
 package com.skyblockplus.general.help;
 
-import static com.skyblockplus.utils.utils.Utils.WEBSITE_LINK;
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
+import lombok.Getter;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Getter;
-import net.dv8tion.jda.api.EmbedBuilder;
+
+import static com.skyblockplus.utils.utils.Utils.WEBSITE_LINK;
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 public class HelpData {
 

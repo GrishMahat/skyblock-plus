@@ -18,8 +18,6 @@
 
 package com.skyblockplus.general;
 
-import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
-
 import com.skyblockplus.utils.command.SlashCommand;
 import com.skyblockplus.utils.command.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -27,6 +25,8 @@ import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import org.springframework.stereotype.Component;
+
+import static com.skyblockplus.utils.utils.Utils.defaultEmbed;
 
 @Component
 public class VoteSlashCommand extends SlashCommand {

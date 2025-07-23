@@ -18,23 +18,24 @@
 
 package com.skyblockplus.utils;
 
-import static com.skyblockplus.utils.utils.HttpUtils.getJson;
-import static com.skyblockplus.utils.utils.JsonUtils.*;
-import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
-import static com.skyblockplus.utils.utils.Utils.*;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.skyblockplus.Main;
-import java.lang.reflect.Type;
-import java.util.*;
-import java.util.stream.Collectors;
 import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.apache.commons.collections4.ListUtils;
 import org.apache.groovy.util.Maps;
+
+import java.lang.reflect.Type;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static com.skyblockplus.utils.utils.HttpUtils.getJson;
+import static com.skyblockplus.utils.utils.JsonUtils.*;
+import static com.skyblockplus.utils.utils.StringUtils.capitalizeString;
+import static com.skyblockplus.utils.utils.Utils.*;
 
 public class Constants {
 
