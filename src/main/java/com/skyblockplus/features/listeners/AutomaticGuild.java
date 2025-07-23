@@ -205,6 +205,7 @@ public class AutomaticGuild {
 				((GuildMessageChannel) jda.getGuildChannelById(BOT_STATUS_CHANNEL_ID)).getHistory()
 					.retrievePast(1)
 					.queue(m -> {
+						if (m.isEmpty()) return;
 						long seconds = Duration.between(m.get(0).getTimeCreated().toInstant(), Instant.now()).toSeconds();
 						if (seconds < 900) {
 							botStatusWebhook.send(client.getSuccess() + " Restarted in " + seconds + " seconds");

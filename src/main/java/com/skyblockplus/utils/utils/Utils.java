@@ -88,11 +88,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class Utils {
 
 	public static final int GLOBAL_COOLDOWN = 3;
-	public static final String DISCORD_SERVER_INVITE_LINK = "https://discord.gg/Z4Fn3eNDXT";
+	public static final String DISCORD_SERVER_INVITE_LINK = "https://discord.gg/y5pRwV8YZt";
 	public static final String BOT_INVITE_LINK =
 		"https://discord.com/api/oauth2/authorize?client_id=796791167366594592&permissions=395541081169&scope=bot+applications.commands";
-	public static final String FORUM_POST_LINK = "https://hypixel.net/threads/3980092";
-	public static final String WEBSITE_LINK = "https://sbplus.codes";
+	public static final String FORUM_POST_LINK = "https://hypixel.net/";
+	public static final String WEBSITE_LINK = "https://nory.tech";
 	public static final ExceptionExecutor executor = new ExceptionExecutor(
 		10,
 		Integer.MAX_VALUE,

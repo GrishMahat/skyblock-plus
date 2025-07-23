@@ -903,7 +903,11 @@ public class LevelSlashCommand extends SlashCommand {
 	}
 
 	private static String getFormatted(JsonElement taskJson, String name, int xp) {
-		return formatNumber(xp) + " / " + formatNumber(higherDepth(taskJson, name).getAsInt());
+		JsonElement max = higherDepth(taskJson, name);
+		if (max == null || max.isJsonNull()) {
+			return formatNumber(xp);
+		}
+		return formatNumber(xp) + " / " + formatNumber(max.getAsInt());
 	}
 
 	@Override
